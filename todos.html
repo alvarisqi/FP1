@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css-external/style.css">
+
+  <link href="img/favicon.png" rel="icon">
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <title>Final Project 1</title>
+</head>
+<body>
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html">PFA</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="about.html">About Us</a></li>
+          <li><a class="nav-link scrollto" href="portfolio.html">Portfolio</a></li>
+          <li><a class="nav-link scrollto " href="contact.html">Contact Us</a></li>
+          <li><a class="nav-link scrollto" href="blog.html">Blog</a></li>
+          <li><a class="nav-link scrollto" href="todos.html">Todos</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="alert alert-primary text-center">
+                    Form Pengisian Hal Yang Perlu Dilakukan
+                </h1>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="form">
+                            <input type="hidden" name="id" id="id">
+                            <label for="">Judul</label>
+                            <input type="text" placeholder="Judul" class="form-control" name="name" id="name" required>
+                            <br>
+                            <label for="">Tanggal</label>
+                            <input type="date" placeholder="Tanggal" class="form-control" name="tgl" id="tgl" required>
+                            <br>
+                            <label for="">Deskripsi</label>
+                            <textarea name="desc" placeholder="Deskripsi" id="desc" cols="30" rows="5" required class="form-control"></textarea>
+                            <br>
+                            <button class="btn btn-sm btn-primary" type="button" onclick="save()">Save</button>
+                            <button class="btn btn-sm btn-primary" type="button" onclick="clearData()">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Judul</th>
+                                        <th>Tanggal</th>
+                                        <th>Deskripsi</th>
+                                        <th>Edit</th>
+                                        <th>Hapus</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table">
+        
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script src="all_data.js"></script>
+    <script src="save.js"></script>
+    <script src="find.js"></script>
+    <script src="remove.js"></script>
+    <script>
+        allData()
+    </script>
+    <script>
+        function clearData(){
+            document.getElementById('form').reset()
+            document.getElementById('id').value = ""
+        }
+    </script>
+
+  </body>
+</html>
